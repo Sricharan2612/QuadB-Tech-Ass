@@ -6,12 +6,13 @@ import { todosAction } from '../Redux/Actions/todosAction';
 import axios from 'axios';
 
 const TaskList = ({ todosData, setTodosData }) => {
+    //Redux
     const dispatch = useDispatch();
-
+    //UseEffect
     useEffect(() => {
         dispatch(todosAction());
     }, []);
-
+    //Handlers
     const handleDelete = async (id) => {
         const modifiedData = todosData.filter((todo) => todo.id !== id);
         console.log(modifiedData);

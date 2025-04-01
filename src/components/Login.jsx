@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
+    //States
     const [RegisterChecked, setRegisterChecked] = useState(false);
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPasswrod] = useState('');
@@ -16,7 +17,7 @@ const Login = () => {
         const authenticated = localStorage.getItem('isAuthenticated');
         return authenticated ? JSON.parse(authenticated) : false;
     });
-
+    //Handlers
     const handleSubmit = (e) => {
         e.preventDefault();
 

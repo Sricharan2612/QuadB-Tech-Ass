@@ -7,17 +7,21 @@ import { todosAction } from '../Redux/Actions/todosAction';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    //Redux
     const dispatch = useDispatch();
     const { todos } = useSelector((state) => state.todoData);
+    //States
     const [toggle, setToggle] = useState(false);
     const [todosData, setTodosData] = useState();
 
     const navigate = useNavigate();
+
+    //Handlers
     const handleLogout = () => {
         localStorage.setItem('isAuthenticated', JSON.stringify(false));
         navigate('/login');
     };
-
+    //UseEffect
     useEffect(() => {
         dispatch(todosAction());
     }, []);
